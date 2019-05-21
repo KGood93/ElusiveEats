@@ -11,8 +11,44 @@ body {
     text-align: center;
 }
 
-.info {
+/* Begin Start Screen CSS */
+.startScreen {
     display: flex; 
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.feedMe, .beerMe {
+    width: 200px;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+/* End START SCREEN CSS */
+
+/* Begin restaurant Section CSS */
+.restaurant {
+    display: none;
+    margin-top: 10px;
+}
+
+.restaurantSearch {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* End restaurant Section CSS */
+
+/* Begin beer Section CSS */
+.beer {
+    display: none;
+    margin-top: 10px;
+}
+/* End beer Section CSS */
+
+
+.info {
+    display: none; 
     flex-direction: column;
     margin: 0px; 
 }
@@ -56,6 +92,4 @@ h3 {
         align-content: space-around;
         margin-left: 5px;
     }
-
-
 }

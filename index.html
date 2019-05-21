@@ -12,10 +12,30 @@
     <div class="container">
         <h1 class="title">Elusive Eats</h1>
 
-        <!--<form id="startScreen">
-            <button class="feedMe">Feed Me!</button>
-            <button class ="drink">I Need a Drink!</button>
-        </form>-->
+        <div class="startScreen">
+            <button type="button" class="feedMe">Feed Me</button>
+            <button type="button" class="beerMe">Beer Me</button>
+        </div>
+
+        <div class="restaurant">
+            <form class="restaurantSearch">
+                <label for="search-term">Search Parks</label>
+                <input type="text" name="search-parks" id="js-search-parks" placeholder="Two Letter Code ie. WI" required>
+                <label for="max-results">Maximum results to return</label>
+                <input type="number" name="max-results" id="js-max-results" value="10">
+                <input type="submit" value="Lets Go!">
+            </form>
+        </div>
+
+        <div class="beer">
+            <form class="beerSearch">
+                <label for="search-term">Search Parks</label>
+                <input type="text" name="search-parks" id="js-search-parks" placeholder="Two Letter Code ie. WI" required>
+                <label for="max-results">Maximum results to return</label>
+                <input type="number" name="max-results" id="js-max-results" value="10">
+                <input type="submit" value="Lets Go!">
+            </form>
+        </div>
 
         <div class="info">
             <h3>Info 1 on restaurants or recipes</h3>
