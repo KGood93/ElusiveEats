@@ -1,3 +1,5 @@
+'use strict';
+
 //let zoCities = 'https://developers.zomato.com/api/v2.1/cities';
 let cityName;
 let cityId;
