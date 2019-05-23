@@ -44,6 +44,11 @@ body {
     display: none;
     margin-top: 10px;
 }
+
+.beerSearch {
+    margin-left: auto;
+    margin-right: auto;
+}
 /* End beer Section CSS */
 
 
