@@ -12,8 +12,6 @@ function startFood () {
         $('.restaurant').css('display', 'flex');
         watchFood();
     });
-
-    
 }
 
 function watchFood() {
@@ -41,7 +39,7 @@ function findCityId() {
 
     const options = {
         headers: new Headers({
-          "Accept": "application/json",
+          //"Accept": "application/json",
           "user-key": apiKey})
       };
 
