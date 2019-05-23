@@ -6,23 +6,25 @@ let cityId;
 let apiKey = "7c817eeb531cb578b30c389378fbbabd"; 
 
 function startFood () {
+   console.log('start');
     $('.startScreen').on('click', '.feedMe', function(event) {
         $('.startScreen').remove();
         $('.restaurant').css('display', 'flex');
+        watchFood();
     });
 
-    watchFood();
+    
 }
 
 function watchFood() {
+    console.log("food request");
     $('.restaurantSearch').submit(event => {
       event.preventDefault();
       cityName = $('#js-search-parks').val();
-      maxResults = $('#js-max-results').val();
+      //maxResults = $('#js-max-results').val();
       console.log(cityName);
+      findCityId();
     });
-
-    findCityId();
 }
 
 function startDrink () {
@@ -33,6 +35,7 @@ function startDrink () {
 }
 
 function findCityId() {
+    console.log("find city");
     let cityURL = 'https://developers.zomato.com/api/v2.1/cities?q=Milwaukee';
     console.log(cityURL);
 
