@@ -51,11 +51,17 @@ body {
 }
 /* End beer Section CSS */
 
+.hidden {
+    display: none;
+}
 
-.info {
-    display: none; 
+.info { 
     flex-direction: column;
     margin: 0px; 
+}
+
+.results {
+    list-style: none;
 }
 
 h3 {

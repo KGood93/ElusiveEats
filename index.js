@@ -3,7 +3,10 @@
 let zoCities = 'https://developers.zomato.com/api/v2.1/search';
 let cityName;
 let cityId;
+let numStart;
+let numEnd;
 let apiKey = "7c817eeb531cb578b30c389378fbbabd"; 
+let yelpBase = 'https://api.yelp.com/v3/businesses/search?term=restaurants&location=';
 
 function startFood () {
    console.log('start');
@@ -11,6 +14,7 @@ function startFood () {
         $('.startScreen').remove();
         $('.restaurant').css('display', 'flex');
         watchFood();
+        numberGenerator();
     });
 }
 
@@ -34,14 +38,20 @@ function startDrink () {
 
 function findCityId() {
     console.log("find city");
-    let cityURL = zoCities + "?q=" + cityName;
+    let cityURL = yelpBase + cityName;
     console.log(cityURL);
+
+    //const options = {
+    //    headers: new Headers({
+    //      "Accept": "application/json",
+    //      "user-key": apiKey})
+    //  };
 
     const options = {
         headers: new Headers({
-          "Accept": "application/json",
-          "user-key": apiKey})
-      };
+            "Authorization": "Bearer UB_DuyAoaacjiT4zIvdg0Kz2J48nx67sRMghYpJBncow190PE0ubEv4NsVGgbetFVYkxsqnWr_Ecc8LtGiLTpUQYFwmyu3yJVhK0s8dOIKujchp2zx7addgRn_HqXHYx"
+        })
+    };
 
     fetch(cityURL, options)
         .then(response => response.json())
@@ -51,10 +61,14 @@ function findCityId() {
 
 function returnCityId(responseJson) {
     console.log(responseJson);
-    //console.log(responseJson.location_suggestions[0].id);
-    //cityId = responseJson.location_suggestions[0].id;
-    //console.log(cityId);
-  }
+}
+
+function numberGenerator() {
+    numStart = Math.floor(Math.random() * 101);
+    console.log(numStart);
+    numEnd = numStart + 4;
+    console.log(numEnd);
+}
 
 function elusiveEats () {
     startFood();
