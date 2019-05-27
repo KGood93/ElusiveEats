@@ -49,6 +49,7 @@ function findCityId() {
 
     const options = {
         headers: new Headers({
+            "Access-Control-Allow-Origin": "*",
             "Authorization": "Bearer UB_DuyAoaacjiT4zIvdg0Kz2J48nx67sRMghYpJBncow190PE0ubEv4NsVGgbetFVYkxsqnWr_Ecc8LtGiLTpUQYFwmyu3yJVhK0s8dOIKujchp2zx7addgRn_HqXHYx"
         })
     };
