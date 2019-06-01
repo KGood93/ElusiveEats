@@ -28,24 +28,24 @@ body {
 /* End START SCREEN CSS */
 
 /* Begin restaurant Section CSS */
-.restaurant {
+.search {
     display: none;
     margin-top: 10px;
 }
 
-.restaurantSearch {
+.citySearch {
     margin-left: auto;
     margin-right: auto;
 }
 /* End restaurant Section CSS */
 
 /* Begin beer Section CSS */
-.beer {
+.search {
     display: none;
     margin-top: 10px;
 }
 
-.beerSearch {
+.citySearch {
     margin-left: auto;
     margin-right: auto;
 }

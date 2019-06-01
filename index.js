@@ -2,35 +2,61 @@
 
 let zoCities = 'https://developers.zomato.com/api/v2.1/search';
 let cityName;
+let totalNum;
 let numStart;
+let url;
 let apiKey = "7c817eeb531cb578b30c389378fbbabd"; 
 
-function startFood () {
-   console.log('start');
+function startScreen () {
     $('.startScreen').on('click', '.feedMe', function(event) {
         $('.startScreen').remove();
-        $('.restaurant').css('display', 'flex');
-        watchFood();
+        $('.search').css('display', 'flex');
+        console.log("feed me");
+        watchCityName();
     });
-}
 
-function watchFood() {
-    console.log("food request");
-    $('.restaurantSearch').submit(event => {
-      event.preventDefault();
-      cityName = $('#js-search-city').val();
-      //maxResults = $('#js-max-results').val();
-      console.log(cityName);
-      numberGenerator();
-      findCityId();
-    });
-}
-
-function startDrink () {
     $('.startScreen').on('click', '.beerMe', function(event) {
         $('.startScreen').remove();
-        $('.beer').css('display', 'flex');
+        $('.search').css('display', 'flex');
+        console.log("beer me");
+        watchCityName();
     });
+}
+
+function watchCityName() {
+    //console.log("food request");
+    $('.citySearch').submit(event => {
+      event.preventDefault();
+      cityName = $('#js-search-city').val();
+      console.log(cityName);
+      findRestNum();
+      //numberGenerator();
+      //findCityId();
+    });
+}
+
+function findRestNum() {
+    url = zoCities + "?q=" + cityName;
+    console.log(url);
+    
+    const options = {
+       headers: new Headers({
+         "Accept": "application/json",
+         "user-key": apiKey})
+      };
+
+    fetch(url, options)
+        .then(response => response.json())
+        .then(responseJson => returnRestNum(responseJson))
+        .catch(error => console.log('Something went wrong. Try again later.'));    
+}
+
+function returnRestNum(responseJson) {
+    console.log(responseJson);
+    totalNum = responseJson.results_found;
+    console.log(totalNum);
+    numberGenerator();
+    findCityId();
 }
 
 function formatQueryParams(params) {
@@ -39,39 +65,39 @@ function formatQueryParams(params) {
 }
 
 function findCityId() {
-    //console.log("find city");
-    
-    //const url = searchURL + '?' + queryString;
-
     const params = {
         q: cityName,
-        start: numStart,
-        count: 5
+        //start: numStart,
+        //count: 5
     };  
 
     let queryString = formatQueryParams(params);
-
-    let cityURL = zoCities + "?" + queryString;
-    console.log(cityURL);
+    let url = zoCities + "?" + queryString;
+    console.log(url);
     
     const options = {
        headers: new Headers({
          "Accept": "application/json",
          "user-key": apiKey})
-      };
+    };
 
-    //fetch(cityURL, options)
-    //    .then(response => response.json())
-    //    .then(responseJson => returnCityId(responseJson))
-    //    .catch(error => console.log('Something went wrong. Try again later.'));    
+    fetch(url, options)
+        .then(response => response.json())
+        .then(responseJson => returnRestInfo(responseJson))
+        .catch(error => console.log('Something went wrong. Try again later.'));    
 }
 
-function returnCityId(responseJson) {
+function returnRestInfo(responseJson) {
     console.log(responseJson);
-    let food = $('<ul id="results"></ul>');
+    let food = $('<ul class="results"></ul>');
     console.log(responseJson.restaurants.length);
     for (let i=0; i <= responseJson.restaurants.length - 1; i++) {
-      food.append(`<li><h3>${responseJson.restaurants[i].restaurant.name}</h3></li>`);
+      food.append(`<li><h3>${responseJson.restaurants[i].restaurant.name}</h3>
+      <span>${responseJson.restaurants[i].restaurant.user_rating.aggregate_rating}</span>
+      <p>${responseJson.restaurants[i].restaurant.cuisines}</p>
+      <p>${responseJson.restaurants[i].restaurant.location.address}</p>
+      <a href="${responseJson.restaurants[i].restaurant.url}">
+      ${responseJson.restaurants[i].restaurant.url}</a></li>`);
     }
 
     $('.results').replaceWith(food);
@@ -80,13 +106,13 @@ function returnCityId(responseJson) {
 }
 
 function numberGenerator() {
-    numStart = Math.floor(Math.random() * 101);
+    //console.log(totalNum-4);
+    numStart = Math.floor(Math.random() * (totalNum-4));
     console.log(numStart);
 }
 
 function elusiveEats () {
-    startFood();
-    startDrink();
+    startScreen();
 }
 
 $(elusiveEats);
