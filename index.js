@@ -48,7 +48,7 @@ function findRestNum() {
     fetch(url, options)
         .then(response => response.json())
         .then(responseJson => returnRestNum(responseJson))
-        .catch(error => console.log('Something went wrong. Try again later.'));    
+        .catch(error => console.log('Something went wrong. Try again later.'));
 }
 
 function returnRestNum(responseJson) {
@@ -56,7 +56,6 @@ function returnRestNum(responseJson) {
     totalNum = responseJson.results_found;
     console.log(totalNum);
     numberGenerator();
-    findCityId();
 }
 
 function formatQueryParams(params) {
@@ -90,10 +89,9 @@ function findCityId() {
 function returnRestInfo(responseJson) {
     console.log(responseJson);
     let food = $('<ul class="results"></ul>');
-    console.log(responseJson.restaurants.length);
+    //console.log(responseJson.restaurants.length);
     for (let i=0; i <= responseJson.restaurants.length - 1; i++) {
-      food.append(`<li><h3>${responseJson.restaurants[i].restaurant.name}</h3>
-      <span>${responseJson.restaurants[i].restaurant.user_rating.aggregate_rating}</span>
+      food.append(`<li><h3>${responseJson.restaurants[i].restaurant.name}<span>${responseJson.restaurants[i].restaurant.user_rating.aggregate_rating}</h3>
       <p>${responseJson.restaurants[i].restaurant.cuisines}</p>
       <p>${responseJson.restaurants[i].restaurant.location.address}</p>
       <a href="${responseJson.restaurants[i].restaurant.url}">
@@ -103,12 +101,23 @@ function returnRestInfo(responseJson) {
     $('.results').replaceWith(food);
    
     $('.info').removeClass('hidden');
+
+    $('.options').removeClass('hidden');
+    watchAgain();
 }
 
 function numberGenerator() {
     //console.log(totalNum-4);
     numStart = Math.floor(Math.random() * (totalNum-4));
     console.log(numStart);
+    findCityId();
+}
+
+function watchAgain() {
+    $('.options').on('click', '.tryAgain', function(event) {
+        console.log("Try Again");
+        numberGenerator();
+    });
 }
 
 function elusiveEats () {
