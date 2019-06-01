@@ -51,6 +51,11 @@ body {
 }
 /* End beer Section CSS */
 
+/* Start Map Section */
+.map {
+    height: 100%;
+}
+
 .hidden {
     display: none;
 }
