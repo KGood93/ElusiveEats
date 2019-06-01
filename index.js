@@ -84,7 +84,7 @@ function findCityId() {
     fetch(url, options)
         .then(response => response.json())
         .then(responseJson => returnRestInfo(responseJson))
-        .catch(error => console.log('Something went wrong. Try again later.'));    
+        .catch(error => console.log('Something went wrong. Try again later.'));
 }
 
 function returnRestInfo(responseJson) {
@@ -99,9 +99,9 @@ function returnRestInfo(responseJson) {
       ${responseJson.restaurants[i].restaurant.url}</a></li>`);
     }
 
-    $('.results').replaceWith(food);
+    generateMap();
 
-    //$('.map').removeClass('hidden');
+    $('.results').replaceWith(food);
    
     $('.info').removeClass('hidden');
 
@@ -123,8 +123,13 @@ function watchAgain() {
     });
 }
 
+function generateMap() {
+ $('.map').removeClass('hidden');
+    $('.map').append('<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&callback=initMap"></script>');
+}
+
 function initMap() {
-    map = new google.maps.Map(document.getElementsById('map'), {center: {lat: -34.397, lng: 150.644}, zoom: 6});
+    map = new google.maps.Map(document.getElementById('map'), {center: {lat: -34.397, lng: 150.644}, zoom: 6});
     infoWindow = new google.maps.InfoWindow;
 
     if(navigator.geolocation){
