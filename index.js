@@ -107,7 +107,7 @@ function returnRestInfo(responseJson) {
         });
     }
 
-    console.log(latlong);
+    //console.log(latlong);
 
     generateMap();
 
@@ -172,15 +172,18 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function addLocations() {
-    let myLatlng = new google.maps.LatLng(43.0365522000,-87.9062654000);
+    for(let i=0; i <= latlong.length - 1; i++){
+    
+        let myLatlng = new google.maps.LatLng(latlong[i].lat,latlong[i].lng);
 
-    let marker = new google.maps.Marker({
-        position: myLatlng,
-        title:"Hello World!"
-    });
-
-// To add the marker to the map, call setMap();
-    marker.setMap(map);
+        let marker = new google.maps.Marker({
+            position: myLatlng,
+            title: "Restarant " + (i+1)
+        });
+    
+    // To add the marker to the map, call setMap();
+        marker.setMap(map);
+    }
 }
 
 
