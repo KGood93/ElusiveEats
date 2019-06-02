@@ -152,6 +152,8 @@ function initMap() {
     else {
         handleLocationError(false, infoWindow, map.getCenter());
     }
+
+    addLocations();
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
