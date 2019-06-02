@@ -8,6 +8,7 @@ let url;
 let apiKey = "7c817eeb531cb578b30c389378fbbabd"; 
 let map, infoWindow;
 let latlong = [];
+let tryAgain = false;
 
 function startScreen () {
     $('.startScreen').on('click', '.feedMe', function(event) {
@@ -108,8 +109,13 @@ function returnRestInfo(responseJson) {
     }
 
     //console.log(latlong);
-
-    generateMap();
+    if(tryAgain == false){
+        generateMap();
+    }
+    else {
+        initMap();
+    }
+    
 
     $('.results').replaceWith(food);
    
@@ -135,7 +141,7 @@ function watchAgain() {
 
 function generateMap() {
  $('.map').removeClass('hidden');
-    $('.map').replaceWith('<div class="map" id="map"><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&callback=initMap"></script></div>');
+ $('.map').replaceWith('<div class="map" id="map"><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&callback=initMap"></script></div>');
 }
 
 function initMap() {
