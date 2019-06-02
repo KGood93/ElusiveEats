@@ -32,7 +32,7 @@ function watchCityName() {
       console.log(cityName);
       //findRestNum();
       numberGenerator();
-      findCityId();
+      //findCityId();
     });
 }
 
@@ -125,7 +125,7 @@ function watchAgain() {
 
 function generateMap() {
  $('.map').removeClass('hidden');
-    $('.map').append('<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&callback=initMap"></script>');
+    $('.map').replaceWith('<div class="map" id="map"><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&callback=initMap"></script></div>');
 }
 
 function initMap() {
