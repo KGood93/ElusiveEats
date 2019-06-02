@@ -7,6 +7,7 @@ let numStart;
 let url;
 let apiKey = "7c817eeb531cb578b30c389378fbbabd"; 
 let map, infoWindow;
+let latlong = [];
 
 function startScreen () {
     $('.startScreen').on('click', '.feedMe', function(event) {
@@ -36,28 +37,28 @@ function watchCityName() {
     });
 }
 
-//function findRestNum() {
-//    url = zoCities + "?q=" + cityName;
-//    console.log(url);
+function findRestNum() {
+    url = zoCities + "?q=" + cityName;
+    console.log(url);
     
-//    const options = {
-//       headers: new Headers({
-//         "Accept": "application/json",
-//         "user-key": apiKey})
-//      };
+    const options = {
+       headers: new Headers({
+         "Accept": "application/json",
+         "user-key": apiKey})
+      };
 
-//    fetch(url, options)
-//        .then(response => response.json())
-//        .then(responseJson => returnRestNum(responseJson))
-//        .catch(error => console.log('Something went wrong. Try again later.'));
-//}
+    fetch(url, options)
+        .then(response => response.json())
+        .then(responseJson => returnRestNum(responseJson))
+        .catch(error => console.log('Something went wrong. Try again later.'));
+}
 
-//function returnRestNum(responseJson) {
-//    console.log(responseJson);
-//    totalNum = responseJson.results_found;
-//    console.log(totalNum);
-//    numberGenerator();
-//}
+function returnRestNum(responseJson) {
+    console.log(responseJson);
+    totalNum = responseJson.results_found;
+    console.log(totalNum);
+    numberGenerator();
+}
 
 function formatQueryParams(params) {
     const queryItems = Object.keys(params).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -98,6 +99,15 @@ function returnRestInfo(responseJson) {
       <a href="${responseJson.restaurants[i].restaurant.url}">
       ${responseJson.restaurants[i].restaurant.url}</a></li>`);
     }
+
+    for (let l=0; l <= responseJson.restaurants.length - 1; l++) {
+        latlong.push({
+            lat: responseJson.restaurants[l].restaurant.location.latitude,
+            lng: responseJson.restaurants[l].restaurant.location.longitude
+        });
+    }
+
+    console.log(latlong);
 
     generateMap();
 
@@ -140,7 +150,7 @@ function initMap() {
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('*');
             infoWindow.open(map);
             map.setCenter(pos);},
             function() {
