@@ -67,7 +67,7 @@ function formatQueryParams(params) {
 
 function findCityId() {
     const params = {
-        q: cityName,
+        q: "Milwaukee",
         start: numStart,
         count: 5
     };  
@@ -139,39 +139,9 @@ function generateMap() {
 }
 
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {center: {lat: -34.397, lng: 150.644}, zoom: 6});
-    infoWindow = new google.maps.InfoWindow;
+    map = new google.maps.Map(document.getElementById('map'), {center: {lat: 43.0389, lng: -87.9065}, zoom: 10});
+    //infoWindow = new google.maps.InfoWindow;
 
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(function(position) {
-            let pos = {
-                lat: position.coords.latitude, 
-                lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('*');
-            infoWindow.open(map);
-            map.setCenter(pos);},
-            function() {
-                handleLocationError(true, infoWindow, map.getCenter());
-        });
-    }
-
-    else {
-        handleLocationError(false, infoWindow, map.getCenter());
-    }
-
-    addLocations();
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation Service Failed.' : 'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
-}
-
-function addLocations() {
     for(let i=0; i <= latlong.length - 1; i++){
     
         let myLatlng = new google.maps.LatLng(latlong[i].lat,latlong[i].lng);
@@ -184,11 +154,25 @@ function addLocations() {
     // To add the marker to the map, call setMap();
         marker.setMap(map);
     }
+
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation Service Failed.' : 'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+}
+
+function watch() {
+    $('.search').on('click', '.feedMe', function(event) {
+        console.log("search");
+        numberGenerator();
+    });
 }
 
 function elusiveEats () {
     //startScreen();
-    watchCityName();
+    watch();
 }
 
 $(elusiveEats);

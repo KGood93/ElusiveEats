@@ -28,12 +28,9 @@ body {
 /* End START SCREEN CSS */
 
 /* Begin restaurant Section CSS */
-.search {
+.search, .options {
     margin-top: 10px;
-}
-
-.citySearch {
-    margin-left: auto;
+    margin-left: auto; 
     margin-right: auto;
 }
 /* End restaurant Section CSS */
@@ -60,7 +57,6 @@ h3 {
     padding-left: 15px;
     margin: 0px;
     margin-top: 5px;
-    height: 150px;
     padding-top: 5px;
 }
 
