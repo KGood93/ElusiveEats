@@ -154,13 +154,6 @@ function initMap() {
     // To add the marker to the map, call setMap();
         marker.setMap(map);
     }
-
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation Service Failed.' : 'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
 }
 
 function watch() {
