@@ -30,9 +30,9 @@ function watchCityName() {
       event.preventDefault();
       cityName = $('#js-search-city').val();
       console.log(cityName);
-      findRestNum();
-      //numberGenerator();
-      //findCityId();
+      //findRestNum();
+      numberGenerator();
+      findCityId();
     });
 }
 
