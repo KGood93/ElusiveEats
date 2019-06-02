@@ -113,6 +113,7 @@ function returnRestInfo(responseJson) {
         generateMap();
     }
     else {
+        removeMarkers();
         initMap();
     }
     
@@ -160,6 +161,10 @@ function initMap() {
     // To add the marker to the map, call setMap();
         marker.setMap(map);
     }
+}
+
+function removeMarkers() {
+    marker.setMap(null);
 }
 
 function watch() {
