@@ -67,8 +67,8 @@ function formatQueryParams(params) {
 function findCityId() {
     const params = {
         q: cityName,
-        //start: numStart,
-        //count: 5
+        start: numStart,
+        count: 5
     };  
 
     let queryString = formatQueryParams(params);
