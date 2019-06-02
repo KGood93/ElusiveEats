@@ -7,7 +7,6 @@ let numStart;
 let url;
 let apiKey = "7c817eeb531cb578b30c389378fbbabd"; 
 let map, infoWindow;
-let location;
 
 function startScreen () {
     $('.startScreen').on('click', '.feedMe', function(event) {
