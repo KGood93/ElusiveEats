@@ -136,6 +136,7 @@ function numberGenerator() {
 function watchAgain() {
     $('.options').on('click', '.tryAgain', function(event) {
         console.log("Try Again");
+        tryAgain = true;
         numberGenerator();
     });
 }
