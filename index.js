@@ -7,6 +7,7 @@ let numStart;
 let url;
 let apiKey = "7c817eeb531cb578b30c389378fbbabd"; 
 let map, infoWindow;
+let location;
 
 function startScreen () {
     $('.startScreen').on('click', '.feedMe', function(event) {
@@ -157,6 +158,18 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation Service Failed.' : 'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
+}
+
+function addLocations() {
+    let myLatlng = new google.maps.LatLng(43.0365522000,-87.9062654000);
+
+    let marker = new google.maps.Marker({
+        position: myLatlng,
+        title:"Hello World!"
+    });
+
+// To add the marker to the map, call setMap();
+    marker.setMap(map);
 }
 
 
