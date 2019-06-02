@@ -36,28 +36,28 @@ function watchCityName() {
     });
 }
 
-function findRestNum() {
-    url = zoCities + "?q=" + cityName;
-    console.log(url);
+//function findRestNum() {
+//    url = zoCities + "?q=" + cityName;
+//    console.log(url);
     
-    const options = {
-       headers: new Headers({
-         "Accept": "application/json",
-         "user-key": apiKey})
-      };
+//    const options = {
+//       headers: new Headers({
+//         "Accept": "application/json",
+//         "user-key": apiKey})
+//      };
 
-    fetch(url, options)
-        .then(response => response.json())
-        .then(responseJson => returnRestNum(responseJson))
-        .catch(error => console.log('Something went wrong. Try again later.'));
-}
+//    fetch(url, options)
+//        .then(response => response.json())
+//        .then(responseJson => returnRestNum(responseJson))
+//        .catch(error => console.log('Something went wrong. Try again later.'));
+//}
 
-function returnRestNum(responseJson) {
-    console.log(responseJson);
-    totalNum = responseJson.results_found;
-    console.log(totalNum);
-    numberGenerator();
-}
+//function returnRestNum(responseJson) {
+//    console.log(responseJson);
+//    totalNum = responseJson.results_found;
+//    console.log(totalNum);
+//    numberGenerator();
+//}
 
 function formatQueryParams(params) {
     const queryItems = Object.keys(params).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -72,7 +72,7 @@ function findCityId() {
     };  
 
     let queryString = formatQueryParams(params);
-    let url = zoCities + "?" + queryString;
+    url = zoCities + "?" + queryString;
     console.log(url);
     
     const options = {
