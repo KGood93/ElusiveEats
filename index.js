@@ -186,9 +186,9 @@ function addLocations() {
     }
 }
 
-
 function elusiveEats () {
-    startScreen();
+    //startScreen();
+    watchCityName();
 }
 
 $(elusiveEats);
