@@ -29,7 +29,6 @@ body {
 
 /* Begin restaurant Section CSS */
 .search {
-    display: none;
     margin-top: 10px;
 }
 
@@ -38,17 +37,6 @@ body {
     margin-right: auto;
 }
 /* End restaurant Section CSS */
-
-/* Begin beer Section CSS */
-.search {
-    margin-top: 10px;
-}
-
-.citySearch {
-    margin-left: auto;
-    margin-right: auto;
-}
-/* End beer Section CSS */
 
 /* Start Map Section */
 .map {
