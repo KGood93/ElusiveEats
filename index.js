@@ -61,7 +61,7 @@ function formatQueryParams(params) {
 
 function findCityId() {
     const params = {
-        q: "Milwaukee",
+        q: cityName,
         start: numStart,
         count: 5
     };  
