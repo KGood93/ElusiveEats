@@ -152,19 +152,6 @@ function initMap() {
 
 function removeMarkers() {
     marker.setMap(null);
-
-    for(let i=0; i <= latlong.length - 1; i++){
-    
-        let myLatlng = new google.maps.LatLng(latlong[i].lat,latlong[i].lng);
-
-        let marker = new google.maps.Marker({
-            position: myLatlng,
-            title: "Restarant " + (i+1)
-        });
-    
-    // To add the marker to the map, call setMap();
-        marker.setMap(map);
-    }
 }
 
 function watch() {
