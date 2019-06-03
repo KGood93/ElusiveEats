@@ -113,9 +113,8 @@ function returnRestInfo(responseJson) {
         generateMap();
     }
     else {
-        removeMarkers();
+        //removeMarkers();
     }
-    
 
     $('.results').replaceWith(food);
    
@@ -135,7 +134,7 @@ function numberGenerator() {
 function watchAgain() {
     $('.options').on('click', '.tryAgain', function(event) {
         console.log("Try Again");
-        tryAgain = true;
+        //tryAgain = true;
         numberGenerator();
     });
 }
@@ -148,6 +147,7 @@ function generateMap() {
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {center: {lat: 43.0389, lng: -87.9065}, zoom: 10});
     //infoWindow = new google.maps.InfoWindow;
+    marker.setMap(null);
 
     for(let i=0; i <= latlong.length - 1; i++){
     
