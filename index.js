@@ -113,7 +113,7 @@ function returnRestInfo(responseJson) {
 
 function numberGenerator() {
     //console.log(totalNum-4);
-    numStart = Math.floor(Math.random() * (1240));
+    numStart = Math.floor(Math.random() * (95));
     console.log(numStart);
     findCityId();
 }
