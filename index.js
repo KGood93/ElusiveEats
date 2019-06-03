@@ -163,7 +163,7 @@ function watch() {
 
 function elusiveEats () {
     //startScreen();
-    watch();
+    watchCityName();
 }
 
 $(elusiveEats);
