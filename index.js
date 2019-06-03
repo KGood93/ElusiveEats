@@ -126,10 +126,10 @@ function watchAgain() {
     });
 }
 
-function generateMap() {
- $('.map').removeClass('hidden');
- $('.map').replaceWith('<div class="map" id="map"><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&callback=initMap"></script></div>');
-}
+//function generateMap() {
+// $('.map').removeClass('hidden');
+// $('.map').replaceWith('<div class="map" id="map"><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&callback=initMap"></script></div>');
+//}
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {center: {lat: 43.0389, lng: -87.9065}, zoom: 10});
