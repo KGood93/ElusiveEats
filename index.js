@@ -17,13 +17,6 @@ function startScreen () {
         console.log("feed me");
         watchCityName();
     });
-
-    $('.startScreen').on('click', '.beerMe', function(event) {
-        $('.startScreen').remove();
-        $('.search').css('display', 'flex');
-        console.log("beer me");
-        watchCityName();
-    });
 }
 
 function watchCityName() {
@@ -109,12 +102,6 @@ function returnRestInfo(responseJson) {
     }
 
     //console.log(latlong);
-    if(tryAgain == false){
-        generateMap();
-    }
-    else {
-        //removeMarkers();
-    }
 
     $('.results').replaceWith(food);
    
