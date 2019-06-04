@@ -50,6 +50,7 @@ function callback(results, status) {
 }
 
 function foodList(estab) {
+    food = '<ul class="results"></ul>';
     for(let i = 0; i < estab.length; i++){
       food.append(`<li><h3>${estab[i].name} - ${estab[i].rating}/5</h3>
       <p>${estab[i].vicinity}</p>
