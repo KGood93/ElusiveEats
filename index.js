@@ -21,7 +21,7 @@ function generateMap() {
 }
 
 function initialize() {
-  let milwaukee = new google.maps.LatLng(43.0389,-87.9065);
+  let milwaukee = new google.maps.LatLng(43.0436,-88.0218);
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: milwaukee,
