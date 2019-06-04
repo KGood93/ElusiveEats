@@ -43,7 +43,6 @@ function callback(results, status) {
     for (let i = 0; i < results.length; i++) {
       let place = results[i];
       console.log(place);
-      console.log(place.keys(name));
     }
   }
 }
