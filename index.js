@@ -38,15 +38,22 @@ function initialize() {
 }
 
 function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    let food = $('<ul class="results"></ul>');
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (let i=0; i < results.length; i++) {
       let places = results[i];
       console.log(results[i]);
-      console.log(results[i].name);
-      //foodList(places);
+      food.append(`<li><h3>${places.name} - ${places.rating}</h3>
+      <p>${places.vicinity}</p>
+      </li>`);
     }
    }
    
+}
+
+function foodList(estab) {
+
+
 }
 
 function elusiveEats () {
