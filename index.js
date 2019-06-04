@@ -58,6 +58,7 @@ function foodList(estab) {
     }
 
     $('.results').replaceWith(food);
+    $('.info').removeClass('hidden');
 }
 
 function elusiveEats () {
