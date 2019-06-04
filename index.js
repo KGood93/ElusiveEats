@@ -43,23 +43,20 @@ function callback(results, status) {
     for (let i=0; i < results.length; i++) {
       places = results[i];
       console.log(results[i].name);
+      foodList(places);
     }
    }
-   foodList();
 }
 
-function foodList() {
+function foodList(estab) {
     
     let food = $('<ul class="results"></ul>');
     console.log("1");
-    console.log(places);
-    for (let i=0; i < places.length; i++) {
-        console.log("2");
-        console.log(places[i].name);
-        food.append(`<li><h3>${places[i].name} - ${places[i].rating}</h3>
-        <p>${places[i].vicinity}</p>
+    console.log(estab);
+        console.log(estab.name);
+        food.append(`<li><h3>${estab.name} - ${estab.rating}</h3>
+        <p>${estab.vicinity}</p>
         </li>`);
-    }
 
     $('.results').replaceWith(food);
 }
