@@ -56,9 +56,9 @@ function foodList(estab) {
       <p>${estab[i].vicinity}</p>
       </li>`);
     }
-    
+
     $('.results').replaceWith(food);
-    //$('.info').removeClass('.hidden');
+    $('.info').removeClass('.hidden');
 }
 
 function elusiveEats () {
