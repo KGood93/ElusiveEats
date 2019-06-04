@@ -49,9 +49,9 @@ function callback(results, status) {
       <p>${results[i].vicinity}</p>
       </li>`);
     }
-    }
-    $('.info').removeClass('.hidden');
-    $('.results').replaceWith(food);
+   }
+   $('.results').replaceWith(food);
+   $('.info').removeClass('.hidden');
 }
 
 
