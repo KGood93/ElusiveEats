@@ -45,16 +45,16 @@ function callback(results, status) {
       console.log(results[i].name);
     }
    }
-   foodList(places);
+   foodList();
 }
 
-function foodList(estab) {
+function foodList() {
     console.log("here");
 
     let food = $('<ul class="results"></ul>');
-    for (let i=0; i <= estab.length; i++) {
-        food.append(`<li><h3>${estab[i].name} - ${estab[i].rating}</h3>
-        <p>${estab[i].vicinity}</p>
+    for (let i=0; i <= places.length; i++) {
+        food.append(`<li><h3>${places[i].name} - ${places[i].rating}</h3>
+        <p>${places[i].vicinity}</p>
         </li>`);
     }
 
