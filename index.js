@@ -48,7 +48,7 @@ function callback(results, status) {
       </li>`);
     }
    }
-   
+   $('.results').replaceWith(food);
 }
 
 function foodList(estab) {
