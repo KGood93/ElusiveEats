@@ -43,7 +43,6 @@ function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (let i = 0; i < results.length; i++) {
       places = results[i];
-      //console.log(results[i]);
       console.log(results[i].name);
     }
    }
