@@ -5,9 +5,9 @@ let service;
 let infowindow;
 
 function startScreen () {
-    $('.startScreen').on('click', '.feedMe', function(event) {
+    $('.search').on('click', '.feedMe', function(event) {
         $('.startScreen').remove();
-        $('.search').css('display', 'flex');
+        //$('.search').css('display', 'flex');
         console.log("feed me");
         //watchCityName();
         generateMap();
