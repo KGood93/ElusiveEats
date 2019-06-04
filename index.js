@@ -3,7 +3,8 @@
 let map;
 let service;
 let infowindow;
-let restaurantPrint;
+let food;
+let places;
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
@@ -39,21 +40,26 @@ function initialize() {
 }
 
 function callback(results, status) {
-  let food = $('<ul class="results"></ul>');
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (let i = 0; i < results.length; i++) {
-      //console.log(results[i]);
+      places = results[i];
+      console.log(results[i]);
       console.log(results[i].name);
-
-      food.append(`<li><h3>${results[i].name} - ${results[i].rating}</h3>
-      <p>${results[i].vicinity}</p>
-      </li>`);
     }
    }
-   $('.results').replaceWith(food);
-   //$('.info').removeClass('.hidden');
+   foodList(places);
 }
 
+function foodList(estab) {
+    for(let i = 0; i < estab.length; i++){
+      food.append(`<li><h3>${estab[i].name} - ${estab[i].rating}</h3>
+      <p>${estab[i].vicinity}</p>
+      </li>`);
+    }
+    
+    $('.results').replaceWith(food);
+    //$('.info').removeClass('.hidden');
+}
 
 function elusiveEats () {
     startScreen();
