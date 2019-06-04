@@ -42,10 +42,10 @@ function callback(results, status) {
     for (let i=0; i < results.length; i++) {
       let places = results[i];
       console.log(results[i].name);
-
+      foodList(places);
     }
    }
-   foodList(places);
+   
 }
 
 function foodList(estab) {
@@ -55,7 +55,6 @@ function foodList(estab) {
     <p>${estab.keys(vicinity)}</p>
     </li>`);
 
-    $('.results').replaceWith(food);
 }
 
 function elusiveEats () {
