@@ -49,9 +49,6 @@ function callback(results, status) {
   }
 }
 
-function createMarker(marker) {
-    marker.setMap(map);
-}
 
 function elusiveEats () {
     startScreen();
