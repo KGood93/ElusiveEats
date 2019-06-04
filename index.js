@@ -48,8 +48,10 @@ function callback(results, status) {
 }
 
 function foodList() {
+    console.log("1");
     let food = $('<ul class="results"></ul>');
     for (let i=0; i <= places.length; i++) {
+        console.log("2");
         console.log(places[i].name);
         food.append(`<li><h3>${places[i].name} - ${places[i].rating}</h3>
         <p>${places[i].vicinity}</p>
