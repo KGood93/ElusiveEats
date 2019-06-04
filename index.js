@@ -10,12 +10,14 @@ function startScreen () {
         $('.search').css('display', 'flex');
         console.log("feed me");
         //watchCityName();
+        generateMap();
     });
 }
 
 function generateMap() {
     $('.map').removeClass('hidden');
     $('.map').replaceWith('<div class="map"><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&libraries=places&callback=initMap" async defer></script></div>');
+    initialize();
 }
 
 function initialize() {
