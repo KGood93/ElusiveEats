@@ -49,12 +49,19 @@ function callback(results, status) {
 }
 
 function foodList(estab) {
-    let food = $('<ul class="results"></ul>');
+    //let food = $('<ul class="results"></ul>');
     console.log("here");
-    for(let i = 0; i < estab.length; i++){
-      food.append(`<li><h3>${estab[i].name} - ${estab[i].rating}</h3>
-      <p>${estab[i].vicinity}</p>
-      </li>`);
+    //for(let i = 0; i < estab.length; i++){
+    //  food.append(`<li><h3>${estab[i].name} - ${estab[i].rating}</h3>
+    //  <p>${estab[i].vicinity}</p>
+    //  </li>`);
+    //}
+
+    let food = $('<ul class="results"></ul>');
+    for (let i=0; i <= estab.length; i++) {
+        food.append(`<li><h3>${estab[i].name} - ${estab[i].rating}</h3>
+        <p>${estab[i].vicinity}</p>
+        </li>`);
     }
 
     $('.results').replaceWith(food);
