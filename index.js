@@ -39,8 +39,8 @@ function initialize() {
 }
 
 function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
     let food = $('<ul class="results"></ul>');
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (let i = 0; i < results.length; i++) {
       //console.log(results[i]);
       console.log(results[i].name);
@@ -50,7 +50,6 @@ function callback(results, status) {
       </li>`);
     }
   }
-
   $('.results').replaceWith(food);
 }
 
