@@ -51,8 +51,8 @@ function callback(results, status) {
 function foodList(estab) {
     
     let food = $('<ul class="results"></ul>');
-    food.append(`<li><h3>${estab.name} - ${estab.rating}</h3>
-    <p>${estab.vicinity}</p>
+    food.append(`<li><h3>${estab.keys(name)} - ${estab.keys(rating)}</h3>
+    <p>${estab.keys(vicinity)}</p>
     </li>`);
 
     $('.results').replaceWith(food);
