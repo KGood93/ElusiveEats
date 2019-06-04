@@ -3,7 +3,6 @@
 let map;
 let service;
 let infowindow;
-let places;
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
@@ -41,22 +40,20 @@ function initialize() {
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (let i=0; i < results.length; i++) {
-      places = results[i];
+      let places = results[i];
       console.log(results[i].name);
-      foodList(places);
+
     }
    }
+   foodList(places);
 }
 
 function foodList(estab) {
     
     let food = $('<ul class="results"></ul>');
-    console.log("1");
-    console.log(estab);
-        console.log(estab.name);
-        food.append(`<li><h3>${estab.name} - ${estab.rating}</h3>
-        <p>${estab.vicinity}</p>
-        </li>`);
+    food.append(`<li><h3>${estab.name} - ${estab.rating}</h3>
+    <p>${estab.vicinity}</p>
+    </li>`);
 
     $('.results').replaceWith(food);
 }
