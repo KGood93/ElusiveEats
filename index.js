@@ -51,7 +51,7 @@ function callback(results, status) {
     }
    }
    $('.results').replaceWith(food);
-   $('.info').removeClass('.hidden');
+   //$('.info').removeClass('.hidden');
 }
 
 
