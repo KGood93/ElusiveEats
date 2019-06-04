@@ -3,7 +3,7 @@
 let map;
 let service;
 let infowindow;
-let places = [];
+let places;
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
@@ -45,13 +45,11 @@ function callback(results, status) {
       console.log(results[i].name);
     }
    }
-   console.log(places);
    foodList();
 }
 
 function foodList() {
     console.log("1");
-    console.log(places);
     let food = $('<ul class="results"></ul>');
     for (let i=0; i <= places.length; i++) {
         console.log("2");
