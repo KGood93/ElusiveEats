@@ -40,11 +40,18 @@ function initialize() {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
+    let food = $('<ul class="results"></ul>');
     for (let i = 0; i < results.length; i++) {
-      console.log(results[i]);
+      //console.log(results[i]);
       console.log(results[i].name);
+
+      food.append(`<li><h3>${results[i].name} - ${results[i].rating}</h3>
+      <p>${results[i].vicinity}</p>
+      </li>`);
     }
   }
+
+  $('.results').replaceWith(food);
 }
 
 
