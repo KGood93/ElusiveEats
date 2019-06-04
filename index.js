@@ -41,8 +41,9 @@ function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (let i=0; i < results.length; i++) {
       let places = results[i];
+      console.log(results[i]);
       console.log(results[i].name);
-      foodList(places);
+      //foodList(places);
     }
    }
    
