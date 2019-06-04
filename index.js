@@ -40,18 +40,20 @@ function initialize() {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (let i = 0; i < results.length; i++) {
+    for (let i=0; i < results.length; i++) {
       places = results[i];
       console.log(results[i].name);
     }
    }
+   console.log(places);
    foodList();
 }
 
 function foodList() {
     console.log("1");
+    console.log(places);
     let food = $('<ul class="results"></ul>');
-    for (let i = 0; i < places.length; i++) {
+    for (let i=0; i <= places.length; i++) {
         console.log("2");
         console.log(places[i].name);
         food.append(`<li><h3>${places[i].name} - ${places[i].rating}</h3>
