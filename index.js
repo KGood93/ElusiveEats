@@ -3,6 +3,7 @@
 let map;
 let service;
 let infowindow;
+let restaurantPrint;
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
@@ -17,7 +18,6 @@ function startScreen () {
 function generateMap() {
     $('.map').removeClass('hidden');
     $('.map').replaceWith('<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&libraries=places&callback=initialize" async defer></script></div>');
-    //initialize();
 }
 
 function initialize() {
@@ -43,6 +43,7 @@ function callback(results, status) {
     for (let i = 0; i < results.length; i++) {
       let place = results[i];
       console.log(place);
+      console.log(place.name);
     }
   }
 }
