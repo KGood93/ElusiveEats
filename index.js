@@ -43,7 +43,7 @@ function callback(results, status) {
     for (let i = 0; i < results.length; i++) {
       let place = results[i];
       //createMarker(results[i]);
-      place.setMap(map);
+      //place.setMap(map);
       console.log(place);
     }
   }
