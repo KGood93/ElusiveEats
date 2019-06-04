@@ -50,11 +50,11 @@ function callback(results, status) {
 function foodList() {
     console.log("1");
     let food = $('<ul class="results"></ul>');
-    for (let i=0; i <= places.length; i++) {
+    for (let l=0; l <= places.length; l++) {
         console.log("2");
-        console.log(places[i].name);
-        food.append(`<li><h3>${places[i].name} - ${places[i].rating}</h3>
-        <p>${places[i].vicinity}</p>
+        console.log(places[l].name);
+        food.append(`<li><h3>${places[l].name} - ${places[l].rating}</h3>
+        <p>${places[l].vicinity}</p>
         </li>`);
     }
 
