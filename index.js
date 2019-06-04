@@ -21,15 +21,15 @@ function generateMap() {
 }
 
 function initialize() {
-  let pyrmont = new google.maps.LatLng(43.0389,-87.9065);
+  let milwaukee = new google.maps.LatLng(43.0389,-87.9065);
 
   map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
+      center: milwaukee,
       zoom: 15
     });
 
   let request = {
-    location: pyrmont,
+    location: milwaukee,
     radius: '500',
     type: ['restaurant']
   };
