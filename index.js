@@ -6,7 +6,7 @@ let infowindow;
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
-        $('.startScreen').remove();
+        //$('.startScreen').remove();
         //$('.search').css('display', 'flex');
         console.log("feed me");
         //watchCityName();
