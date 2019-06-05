@@ -43,7 +43,7 @@ function callback(results, status) {
     for (let i=0; i < results.length; i++) {
       let places = results[i];
       console.log(results[i]);
-      food.append(`<li><h3>${places.name} - ${places.rating}</h3>
+      food.append(`<li><h3>${places.name} - ${places.rating}/5</h3>
       <p>${places.vicinity}</p>
       </li>`);
     }
