@@ -22,7 +22,7 @@ function generateMap() {
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 43.0389, lng: -87.9065},
-      zoom: 12
+      zoom: 15
     });
     infoWindow = new google.maps.InfoWindow;
   
@@ -35,9 +35,10 @@ function initMap() {
         };
   
         infoWindow.setPosition(pos);
-        infoWindow.setContent('Location found.');
+        infoWindow.setContent('You');
         infoWindow.open(map);
         map.setCenter(pos);
+        initialize(pos);
       }, function() {
         handleLocationError(true, infoWindow, map.getCenter());
       });
@@ -55,12 +56,12 @@ function initMap() {
     infoWindow.open(map);
   }
 
-function initialize() {
-  let milwaukee = new google.maps.LatLng(43.0436,-88.0218);
+function initialize(location) {
+  let milwaukee = new google.maps.LatLng(location);
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: milwaukee,
-      zoom: 10
+      zoom: 15
     });
 
   let request = {
