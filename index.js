@@ -61,7 +61,7 @@ function initialize(location) {
 
   let request = {
     location: milwaukee,
-    radius: '1000',
+    radius: '3000',
     type: ['restaurant']
   };
 
