@@ -2,7 +2,7 @@
 
 let map;
 let service;
-let infowindow;
+let infoWindow;
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
