@@ -59,10 +59,10 @@ function initMap() {
 function initialize(location) {
   let milwaukee = new google.maps.LatLng(location);
 
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: milwaukee,
-      zoom: 15
-    });
+  //map = new google.maps.Map(document.getElementById('map'), {
+  //    center: milwaukee,
+  //    zoom: 15
+  //  });
 
   let request = {
     location: milwaukee,
