@@ -59,11 +59,6 @@ function initMap() {
 function initialize(location) {
   let milwaukee = new google.maps.LatLng(location);
 
-  //map = new google.maps.Map(document.getElementById('map'), {
-  //    center: milwaukee,
-  //    zoom: 15
-  //  });
-
   let request = {
     location: milwaukee,
     radius: '1000',
@@ -83,10 +78,23 @@ function callback(results, status) {
       food.append(`<li><h3>${places.name} - ${places.rating}/5</h3>
       <p>${places.vicinity}</p>
       </li>`);
+      createMarker(results[i]);
     }
    }
    $('.results').replaceWith(food);
 }
+
+function createMarker(place) {
+    let marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+  
+    google.maps.event.addListener(marker, 'click', function() {
+      infoWindow.setContent(place.name);
+      infoWindow.open(map, this);
+    });
+  }
 
 function elusiveEats () {
     startScreen();
