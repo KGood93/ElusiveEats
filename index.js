@@ -24,7 +24,7 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map'), {
       center: milwaukee,
-      zoom: 15
+      zoom: 10
     });
 
   let request = {
@@ -49,11 +49,6 @@ function callback(results, status) {
     }
    }
    $('.results').replaceWith(food);
-}
-
-function foodList(estab) {
-
-
 }
 
 function elusiveEats () {
