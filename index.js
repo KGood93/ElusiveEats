@@ -16,8 +16,44 @@ function startScreen () {
 
 function generateMap() {
     $('.map').removeClass('hidden');
-    $('.map').replaceWith('<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&libraries=places&callback=initialize" async defer></script></div>');
+    $('.map').replaceWith('<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&libraries=places&callback=initMap" async defer></script></div>');
 }
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 43.0389, lng: -87.9065},
+      zoom: 12
+    });
+    infoWindow = new google.maps.InfoWindow;
+  
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+  
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('Location found.');
+        infoWindow.open(map);
+        map.setCenter(pos);
+      }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  }
+  
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+  }
 
 function initialize() {
   let milwaukee = new google.maps.LatLng(43.0436,-88.0218);
@@ -29,7 +65,7 @@ function initialize() {
 
   let request = {
     location: milwaukee,
-    radius: '500',
+    radius: '1000',
     type: ['restaurant']
   };
 
