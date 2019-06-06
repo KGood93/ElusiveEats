@@ -12,7 +12,7 @@ body {
 
 .title {
     margin: auto;
-    font-family: 'Yellowtail', cursive;
+    font-family: 'Pacifico', cursive;
     background-color: RGB(199, 105, 77);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -20,14 +20,7 @@ body {
     text-align: center;
 }
 
-/* Begin Start Screen CSS */
-.startScreen {
-    display: flex; 
-    flex-direction: column;
-    margin-top: 50px;
-}
-
-.feedMe, .beerMe {
+.search {
     width: 200px;
     height: 65px;
     font-weight: bold;
@@ -39,32 +32,6 @@ body {
     border-radius: 15px;
     border-color: RGB(219, 139, 80);
 }
-
-/* End START SCREEN CSS */
-
-/* Begin restaurant Section CSS */
-.restaurant {
-    display: none;
-    margin-top: 10px;
-}
-
-.restaurantSearch {
-    margin-left: auto;
-    margin-right: auto;
-}
-/* End restaurant Section CSS */
-
-/* Begin beer Section CSS */
-.beer {
-    display: none;
-    margin-top: 10px;
-}
-
-.beerSearch {
-    margin-left: auto;
-    margin-right: auto;
-}
-/* End beer Section CSS */
 
 .hidden {
     display: none;
@@ -85,10 +52,6 @@ h3 {
     margin-top: 5px;
     height: 150px;
     padding-top: 5px;
-}
-
-.info2{
-    background-color: grey;
 }
 
 @media screen and (min-width: 768px){
@@ -138,10 +101,6 @@ h3 {
     margin: 0px;
     margin-top: 5px;
     padding-top: 5px;
-}
-
-.info2{
-    background-color: grey;
 }
 
 @media screen and (min-width: 768px){
