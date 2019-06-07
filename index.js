@@ -6,17 +6,13 @@ let infoWindow;
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
-        //$('.startScreen').remove();
-        //$('.search').css('display', 'flex');
         console.log("feed me");
-        //watchCityName();
         generateMap();
     });
 }
 
 function generateMap() {
-    //$('.map').removeClass('hidden');
-    $('.search').replaceWith('<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&libraries=places&callback=initMap" async defer></script></div>');
+    $(".search").replaceWith('<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&libraries=places&callback=initMap" async defer></script></div>');
 }
 
 function initMap() {
@@ -75,7 +71,7 @@ function callback(results, status) {
     for (let i=0; i < results.length; i++) {
       let places = results[i];
       console.log(results[i]);
-      food.append(`<li><h3>${places.name} - ${places.rating}/5</h3>
+      food.append(`<li><h3>${places.name} - ${places.rating}/5.0</h3>
       <p>${places.vicinity}</p>
       </li>`);
       createMarker(results[i]);
