@@ -15,7 +15,7 @@ function startScreen () {
 }
 
 function generateMap() {
-    $('.map').removeClass('hidden');
+    //$('.map').removeClass('hidden');
     $('.search').replaceWith('<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&libraries=places&callback=initMap" async defer></script></div>');
 }
 
