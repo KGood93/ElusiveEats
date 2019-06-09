@@ -3,6 +3,7 @@
 let map;
 let service;
 let infoWindow;
+let apiKey = "AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ";
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
@@ -12,7 +13,7 @@ function startScreen () {
 }
 
 function generateMap() {
-    $(".search").replaceWith('<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ&libraries=places&callback=initMap" async defer></script></div>');
+    $(".search").replaceWith(`<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap" async defer></script></div>`);
 }
 
 function initMap() {
@@ -102,7 +103,7 @@ function getDetails(placeId) {
     const params = {
         placeid: placeId,
         fields: "name,rating,formatted_address,website,review",
-        key: "AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ"
+        key: apiKey
     };
 
     let queryString = formatQueryParams(params)

@@ -6,7 +6,7 @@ body {
     background-size: 100%;
 }
 
-.title {
+h1 {
     margin: auto;
     font-family: 'Pacifico', cursive;
     background-color: RGB(199, 105, 77);
