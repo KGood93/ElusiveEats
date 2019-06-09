@@ -3,7 +3,7 @@
 let map;
 let service;
 let infoWindow;
-let apiKey = "";
+let apiKey = "AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ";
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
@@ -69,15 +69,15 @@ function initialize(location) {
 function callback(results, status) {
     let food = $('<ul class="results"></ul>');
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (let i=0; i < results.length; i++) {
-      let places = results[i];
-      console.log(results[i]);
+    //for (let i=0; i < results.length; i++) {
+      let places = results[2];
+      console.log(results[2]);
       food.append(`<li><h3>${places.name} - ${places.rating}/5.0</h3>
       <p>${places.vicinity}</p>
       </li>`);
-      createMarker(results[i]);
-      //getDetails(places.id);
-    }
+      createMarker(results[2]);
+      getDetails(places.id);
+    //}
    }
    $('.results').replaceWith(food);
 }
