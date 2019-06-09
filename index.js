@@ -75,7 +75,7 @@ function callback(results, status) {
       <p>${places.vicinity}</p>
       </li>`);
       createMarker(results[i]);
-      getDetails(places.id);
+      //getDetails(places.id);
     }
    }
    $('.results').replaceWith(food);
