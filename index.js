@@ -3,7 +3,7 @@
 let map;
 let service;
 let infoWindow;
-let apiKey = "AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ";
+let apiKey = "";
 
 function startScreen () {
     $('.search').on('click', '.feedMe', function(event) {
