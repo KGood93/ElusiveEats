@@ -93,10 +93,27 @@ function createMarker(place) {
     });
   }
 
+  function formatQueryParams(params) {
+    const queryItems = Object.keys(params).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    return queryItems.join('&');
+}  
+
 function getDetails(placeId) {
-    ('.info').append(`<script src="https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,rating,formatted_address,website&key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ" async defer></script>`);
-    console.log(placeId);
-    console.log("getting place details");
+    const params = {
+        placeid: placeId,
+        fields: "name,rating,formatted_address,website,review",
+        key: "AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ"
+    };
+
+    let queryString = formatQueryParams(params)
+    const url = "https://maps.googleapis.com/maps/api/place/details/json" + '?' + queryString;
+
+    console.log(url);
+
+    fetch(url)
+      .then(response => response.json())
+      .then(responseJson => displayResults(responseJson))
+      .catch(error => alert('Something went wrong. Try again later.'));
 }
 
 function elusiveEats () {
