@@ -26,11 +26,6 @@ body {
     background-size: 100%;
 }
 
-.map {
-    display: block;
-    height: 250px;
-}
-
 button {
     margin-top: 30px;
     margin-left: auto;
@@ -48,9 +43,15 @@ button {
     display: none;
 }
 
+.map {
+    display: block;
+    height: 250px;
+}
+
 .info { 
     flex-direction: column;
-    margin: 0px; 
+    margin: 0px;
+    padding-left: 20px; 
 }
 
 .results {
