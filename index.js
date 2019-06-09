@@ -94,7 +94,7 @@ function createMarker(place) {
   }
 
 function getDetails(placeId) {
-    (".info").append(`<script src="https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,rating,formatted_address,website&key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ" async defer></script>`);
+    ('.info').append(`<script src="https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,rating,formatted_address,website&key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ" async defer></script>`);
     console.log(placeId);
     console.log("getting place details");
 }
