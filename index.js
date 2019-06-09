@@ -75,6 +75,7 @@ function callback(results, status) {
       <p>${places.vicinity}</p>
       </li>`);
       createMarker(results[i]);
+      getDetails(places.id);
     }
    }
    $('.results').replaceWith(food);
@@ -91,6 +92,10 @@ function createMarker(place) {
       infoWindow.open(map, this);
     });
   }
+
+function getDetails(placeId) {
+    (".info").append(`<script src="https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=name,rating,formatted_address,website&key=AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ" async defer></script>`);
+}
 
 function elusiveEats () {
     startScreen();
