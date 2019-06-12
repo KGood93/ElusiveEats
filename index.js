@@ -3,7 +3,7 @@
 let map;
 let service;
 let infoWindow;
-let apiKey = "AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ";
+let apiKey = "";
 let zipCoords = false;
 let zipLat, zipLng;
 
