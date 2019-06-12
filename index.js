@@ -29,7 +29,7 @@ function watchCityZip() {
   $('form').submit(event => {
     event.preventDefault();
     let code = $('#js-search-city').val();
-    //console.log(code);
+    console.log(code);
     generateZipMap(code);
   });
 }
@@ -70,6 +70,7 @@ function initMap() {
   
   //map based on coordinates from zipcode
   if(zipCoords == true) {
+    console.log(here);
     let loc = {
       lat: zipLat,
       lng: zipLng
