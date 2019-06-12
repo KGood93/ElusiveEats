@@ -3,7 +3,7 @@
 let map;
 let service;
 let infoWindow;
-let apiKey = "";
+let apiKey = "AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ";
 let zipCoords = false;
 let zipLat, zipLng;
 
@@ -18,7 +18,7 @@ function startScreen () {
   });
   
   $('.search').on('click', '.geoSearch', function(event) {
-      console.log("geo search");
+      //console.log("geo search");
       //generate map from geolocation
       generateMap();
    });
@@ -44,6 +44,7 @@ function generateZipMap(zipCode) {
   //call to geocode server to return lat and long of zipcode area
   let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${zipCode}&key=${apiKey}`;
 
+  console.log(url);
   fetch(url)
     .then(response => response.json())
     .then(responseJson => returnCoord(responseJson))
@@ -71,7 +72,7 @@ function initMap() {
   
   //map based on coordinates from zipcode
   if(zipCoords == true) {
-    console.log(here);
+    //console.log("here");
     let loc = {
       lat: zipLat,
       lng: zipLng
