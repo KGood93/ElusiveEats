@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Elusive Eats</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="container">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Elusive Eats</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    </head>
+    <body>
         <h1>Elusive Eats</h1>
-
         <div class="search">
-            <button type="button" class="feedMe">Feed Me</button>
+            <h2>How would you like to search?</h2>
+            <section class="zip">
+                <button type="button" class="zipSearch">Zip Code</button>
+            </section>
+
+            <section class="zipCode hidden">
+                <form id="js-form">
+                    <label for="search-term">Enter Zip Code</label>
+                    <input type="zipcode" name="search-city" id="js-search-city" placeholder="00000" required>
+                    <button type="submit" class="feedMe">Feed Me</button>
+                </form>
+            </section>
+
+            <section class="geo">
+                <button type="button" class="geoSearch">Geolocation</button>
+            </section>    
         </div>
 
-        <section class="info">
-            <ul class="results"></ul>
-        </sectaion>
+        <div class="container">
+            <section class="map">
+            </section>
 
-        <div class="options hidden">
-            <button type="button" class="tryAgain">Try Again</button>
+            <section class="info">
+                <ul class="results"></ul>
+            </sectaion>
         </div>
-    </div>
-    <script src="index.js"></script>
-    
-</body>
+        <script src="index.js"></script>
+    </body>
 </html>
