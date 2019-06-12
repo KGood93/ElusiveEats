@@ -53,6 +53,7 @@ function generateZipMap(zipCode) {
 function returnCoord(responseJson) {
   //set coordinates and boolean to initiate map based on coordinates. 
   let coords = responseJson.results[0].geometry.location;
+  console.log(coords);
   zipLat = coords.lat;
   zipLng = coords.lng;
   zipCoords = true;
