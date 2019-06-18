@@ -4,6 +4,7 @@ let map;
 let service;
 let infoWindow;
 let apiKey = "AIzaSyDiFNVG6TsLybfDfR9eBj0kl9ZzkooRMUQ";
+let apiKey2 = "AIzaSyCydayzQYPlQzkHYRzXQDx0jYvHMBUt7_s";
 let zipCoords = false;
 let zipLat, zipLng;
 
@@ -36,7 +37,7 @@ function watchCityZip() {
 
 function generateMap() {
   //add script to initiate google map
-  $(".map").replaceWith(`<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap" async defer></script></div>`);
+  $(".map").replaceWith(`<div class="map" id="map"><script src="https://maps.googleapis.com/maps/api/js?key=${apiKey2}&libraries=places&callback=initMap" async defer></script></div>`);
   $('.search').css('display', 'none');
 }
 
