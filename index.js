@@ -151,12 +151,21 @@ function callback(results, status) {
           //generate random number to display one of five possible reviews
           let num = Math.floor((Math.random() * 5) + 0);
           console.log(place);
+          if (places.reviews.length != 5) {
+            food.append(`<li><h3>${place.name} - ${place.rating}/5.0</h3>
+            <p>${place.formatted_address}</p>
+            <p>Phone : ${place.formatted_phone_number}</p>
+            <a href="${place.website}">Go To Website</a>
+            </li>`);
+          }
+          else {          
           food.append(`<li><h3>${place.name} - ${place.rating}/5.0</h3>
           <p>${place.formatted_address}</p>
           <p>Phone : ${place.formatted_phone_number}</p>
           <a href="${place.website}">Go To Website</a>
           <p>${place.reviews[num].author_name} - ${place.reviews[num].rating}/5 <br> ${place.reviews[num].text}</p>
           </li>`);
+          }
         }
       });
     }
