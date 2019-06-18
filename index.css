@@ -122,7 +122,7 @@ input {
     border-radius: 15px;
 }
 
-label {
+.dir {
     background-color: RGB(58, 93, 112);
     color: RGB(219, 139, 80);
     font-size: 25px;
