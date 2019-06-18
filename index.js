@@ -150,6 +150,7 @@ function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           //generate random number to display one of five possible reviews
           let num = Math.floor((Math.random() * 5) + 0);
+          console.log(place);
           food.append(`<li><h3>${place.name} - ${place.rating}/5.0</h3>
           <p>${place.formatted_address}</p>
           <p>Phone : ${place.formatted_phone_number}</p>
