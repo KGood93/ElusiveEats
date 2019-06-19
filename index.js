@@ -11,8 +11,7 @@ let zipLat, zipLng;
 function startScreen () {
   //Diffrentiate between zip code search or geolocation search
   $('.search').on('click', '.zipSearch', function(event){
-      $('.zip').remove();
-      $('.geo').remove();
+      $('.start').remove();
       $('.zipCode').css('display', 'flex');
       //console.log("zip search");
       watchCityZip();
