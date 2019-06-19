@@ -39,6 +39,17 @@ h1 {
     margin-right: auto;
 }
 
+.start {
+    display: flex; 
+    flex-direction: column;
+    align-content: center;
+}
+
+.zipcode {
+    display: flex; 
+    
+}
+
 button {
     margin-left: auto;
     margin-right: auto;
@@ -86,6 +97,7 @@ h2 {
     margin-right: auto; 
     margin-top: 15px;
     margin-bottom: 0px;
+    width: 500px;
     background-color: RGB(58, 93, 112);
     border-radius: 10px;
     padding: 5px;
