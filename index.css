@@ -92,6 +92,11 @@ h2 {
     text-align: center;
 }
 
+.zipcode {
+    display: flex;
+    align-content: center;
+}
+
 form {
     display: block; 
     margin-left: auto;
