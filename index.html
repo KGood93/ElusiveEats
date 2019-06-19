@@ -11,10 +11,16 @@
     <body>
         <h1>Elusive Eats</h1>
         <div class="search">
-            <section class="zip">
+            <div class="start">
                 <h2>How would you like to search?</h2>
-                <button type="button" class="zipSearch">Zip Code</button>
-            </section>
+                <section class="zip">
+                    <button type="button" class="zipSearch">Zip Code</button>
+                </section>
+
+                <section class="geo">
+                    <button type="button" class="geoSearch">Geolocation</button>
+                </section>
+            </div>
 
             <section class="zipCode hidden">
                 <form id="js-form">
@@ -23,10 +29,6 @@
                     <button type="submit" class="feedMe">Feed Me</button>
                 </form>
             </section>
-
-            <section class="geo">
-                <button type="button" class="geoSearch">Geolocation</button>
-            </section>    
         </div>
 
         <div class="container">
